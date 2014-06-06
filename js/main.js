@@ -14,12 +14,14 @@ $(function () {
       a.innerHTML = '▇'
 
       if (BANNED_LINKS.indexOf(a.href) === -1) {
-        document.body.appendChild(a);
+        $('#squares').append(a);
       }
 
       formatted[a.href] = tags;
     }),
       clickedLinks = [];
+
+    $('#squares').css('display', 'block');
 
     window.done = function done() {
       var timesClicked = {};
