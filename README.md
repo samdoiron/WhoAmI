@@ -23,7 +23,7 @@ This includes taking a "screenshot" from Javascript.
 
 ### I cloned the repo but the code doesn't work!
 
-The code users AJAX, so it needs to be run from a server.
+The website uses AJAX, so it needs to be run from a server.
 If it still does not work, file an issue.
 
 ### None of my squares are red
