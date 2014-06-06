@@ -21,7 +21,6 @@ $(function () {
     }),
       clickedLinks = [];
 
-    $('#loading-cover').fadeOut('fast');
     window.done = function done() {
       var timesClicked = {};
       _.each(clickedLinks, function (link) {
