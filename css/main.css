@@ -21,6 +21,10 @@ a:visited {
   color: red;
 }
 
+a:hover {
+  color: lightgray;
+}
+
 .clicked {
   opacity: 0;
   -webkit-transition: .1s;

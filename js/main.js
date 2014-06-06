@@ -11,7 +11,7 @@ $(function () {
     _.each(parsed, function (tags, url) {
       var a = document.createElement('a');
       a.href = url;
-      a.innerHTML = '▇'
+      a.innerHTML = '▇';
 
       if (BANNED_LINKS.indexOf(a.href) === -1) {
         $('#squares').append(a);
