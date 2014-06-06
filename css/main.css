@@ -1,7 +1,3 @@
-#squares {
-  display: none;
-}
-
 html, body {
   color: #555;
   font-family: sans-serif;
@@ -31,5 +27,6 @@ a:visited {
      -moz-transition: .1s;
       -ms-transition: .1s;
        -o-transition: .1s;
+          transition: .1s;
 }
 
