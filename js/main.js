@@ -45,15 +45,46 @@ $(function () {
         .value(),
 
         ol = document.createElement('ol');
+       var ol = document.createElement('ol');
 
-      _.each(sorted, function (data) {
-        var li = document.createElement('li');
-        li.innerHTML = data.interest;
-        ol.appendChild(li);
-      })
+       _.each(sorted, function (cat) {
+         var li = document.createElement('li');
+         li.innerHTML = cat.interest;
+         ol.appendChild(li);
+       });
 
-      document.body.innerHTML = '<h1>Your interests are:</h1>';
-      document.body.appendChild(ol);
+
+      if (sorted.length === 0) {
+        document.body.innerHTML = '<h1>Could not determine interests</h1>';
+        document.body.innerHTML += '<p>(Pssst, If you did not get any red squares, try visiting without being in Private or Incognito mode.)</p>';
+      } else {
+        document.body.innerHTML = '<h1>Your interests are:</h1>';
+        var r = Raphael(250, 0, 640, 480);
+
+        var pie = r.piechart(320, 240, 100, _.pluck(sorted, 'times'), {
+          legend: _.pluck(sorted, 'interest')
+        });
+
+        pie.hover(function () {
+            this.sector.stop();
+            this.sector.scale(1.1, 1.1, this.cx, this.cy);
+
+            if (this.label) {
+                this.label[0].stop();
+                this.label[0].attr({ r: 7.5 });
+                this.label[1].attr({ "font-weight": 800 });
+            }
+        }, function () {
+            this.sector.animate({ transform: 's1 1 ' + this.cx + ' ' + this.cy }, 500, "bounce");
+
+            if (this.label) {
+                this.label[0].animate({ r: 5 }, 500, "bounce");
+                this.label[1].attr({ "font-weight": 400 });
+            }
+        });
+        document.body.appendChild(ol);
+        return;
+      }
     };
 
     $('a').click(function (e) {

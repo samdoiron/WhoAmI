@@ -23,9 +23,9 @@ a:visited {
 
 .clicked {
   opacity: 0;
-  -webkit-transition: .2s;
-     -moz-transition: .2s;
-      -ms-transition: .2s;
-       -o-transition: .2s;
+  -webkit-transition: .1s;
+     -moz-transition: .1s;
+      -ms-transition: .1s;
+       -o-transition: .1s;
 }
 
