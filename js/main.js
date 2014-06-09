@@ -4,7 +4,7 @@ var BANNED_LINKS = [
 ];
 
 $(function () {
-  $.get('sites.json', function (parsed) {
+  $.getJSON('sites.json', function (parsed) {
     // Web browsers change the URL after it is added.
     var formatted = {};
 
