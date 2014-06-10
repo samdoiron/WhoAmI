@@ -5,25 +5,28 @@ var BANNED_LINKS = [
 
 $(function () {
   $.getJSON('sites.json', function (parsed) {
-    // Web browsers change the URL after it is added.
-    var formatted = {};
+
+    var formatted = {}; // Web browsers change the URL after it is added.
+    var clickedLinks = [];
+    var squareElements = [];
 
     $('#bottom-button').css('display', 'block');
+
+    // Remove banned links
+    for (var i = 0; i < BANNED_LINKS.length; i++) {
+      delete parsed[BANNED_LINKS[i]];
+    }
 
     _.each(parsed, function (tags, url) {
       var a = document.createElement('a');
       a.href = url;
       a.innerHTML = '▇';
 
-      if (BANNED_LINKS.indexOf(a.href) === -1) {
-        $('#squares').append(a);
-      }
-
+      squareElements.push(a);
       formatted[a.href] = tags;
-    }),
-      clickedLinks = [];
+    });
 
-    $('#squares').css('display', 'block');
+    $('#squares').append(squareElements).css('display', 'block');
 
     window.done = function done() {
       var timesClicked = {};
@@ -46,17 +49,18 @@ $(function () {
         })
         .sortBy('times')
         .reverse()
-        .value(),
+        .value();
 
-        ol = document.createElement('ol');
        var ol = document.createElement('ol');
+       var listElements = [];
 
        _.each(sorted, function (cat) {
          var li = document.createElement('li');
          li.innerHTML = cat.interest;
-         ol.appendChild(li);
+         listElements.push(li);
        });
 
+      $(ol).append(listElements);
 
       if (sorted.length === 0) {
         document.body.innerHTML = '<h1>Could not determine interests</h1>';
@@ -95,7 +99,6 @@ $(function () {
       e.preventDefault();
       $(this).addClass('clicked');
       clickedLinks.push(this.href);
-      return false;
     });
   });
 });
