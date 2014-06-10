@@ -27,11 +27,11 @@ a:hover {
 
 .clicked {
   opacity: 0;
-  -webkit-transition: .1s;
-     -moz-transition: .1s;
-      -ms-transition: .1s;
-       -o-transition: .1s;
-          transition: .1s;
+  -webkit-transition: opacity .1s;
+     -moz-transition: opacity .1s;
+      -ms-transition: opacity .1s;
+       -o-transition: opacity .1s;
+          transition: opacity .1s;
 }
 
 #squares {
