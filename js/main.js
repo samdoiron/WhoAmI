@@ -8,6 +8,8 @@ $(function () {
     // Web browsers change the URL after it is added.
     var formatted = {};
 
+    $('#bottom-button').css('display', 'block');
+
     _.each(parsed, function (tags, url) {
       var a = document.createElement('a');
       a.href = url;

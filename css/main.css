@@ -34,3 +34,7 @@ a:hover {
           transition: .1s;
 }
 
+#squares {
+    margin-bottom: 2em;
+}
+
