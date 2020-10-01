@@ -1,4 +1,4 @@
-Who Am I?
+About Us
 =========
 "Who Am I?" is a small website that determines your interests by
 exploiting a:visited in CSS.
