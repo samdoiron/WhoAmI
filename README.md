@@ -1,3 +1,4 @@
+The interesting one!!
 Who Am I?
 =========
 "Who Am I?" is a small website that determines your interests by
@@ -21,12 +22,12 @@ No, all links are treated the same from JS for this very reason.
 This includes taking a "screenshot" from Javascript.
 
 
-### I cloned the repo but the code doesn't work!
+### I cloned the repo but the code doesn't work! ###
 
 The website uses AJAX, so it needs to be run from a server.
 If it still does not work, file an issue.
 
-### Why are none of my squares red?
+#### Why are none of my squares red? ####
 
 Squares turn red based on your browser history. If you don't have any history
 (or you are in Incognito / Private mode) then it will not work.
