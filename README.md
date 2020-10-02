@@ -22,7 +22,7 @@ No, all links are treated the same from JS for this very reason.
 This includes taking a "screenshot" from Javascript.
 
 
-### I cloned the repo but the code doesn't work!
+### I cloned the repo but the code doesn't work! ###
 
 The website uses AJAX, so it needs to be run from a server.
 If it still does not work, file an issue.
